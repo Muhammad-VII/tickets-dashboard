@@ -1,1 +1,38 @@
-<div echarts [options]="options" class="demo-chart"></div>
+<section>
+  <header class="px-10 pt-6">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="text-[18px]">إحصائيات إستخدام القسيمة</p>
+        <p class="text-[20px] text-[#99A1B7]">05 يوليو , 2023 - 05 أغسطس , 2023 <i
+            class="fa fa-arrow-down text-[16px] mr-2"></i></p>
+      </div>
+      <div>
+
+        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+          class="bg-[#FAFAFA] border-solid border-2 border-[#E8E8E8] focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+          type="button">سنوياً <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 10 6">
+            <path stroke="#c2c2c2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+          </svg>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div id="dropdown"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+            <li>
+              <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">شهرياً</a>
+            </li>
+            <li>
+              <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">يومياً</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <article>
+    <div echarts [options]="options" class="demo-chart"></div>
+  </article>
+</section>

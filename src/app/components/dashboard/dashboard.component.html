@@ -2,25 +2,72 @@
   <div class="container">
     <header class="mb-3 flex items-center justify-between">
       <div class="flex items-center justify-center">
-        <button class="bg-[#E7EAED] px-3 py-1 rounded">
+        <button class="bg-[#E7EAED] px-3 py-1 rounded hover:bg-[#fff] transition-all duration-300">
           <i class="fa fa-arrow-right"></i>
         </button>
         <p class="mr-2">{{'تذكرة رقم #2342'}}</p>
       </div>
       <div class="flex items-center justify-center">
-        <button class="bg-[#F9F9F9] px-3 py-1 text-[#1C1C28] rounded border hover:bg-[#fff] transition-all duration-300">
-          <i class="fa-regular fa-pen-to-square ml-1 text-primary"></i>
+        <button
+          class="bg-[#F9F9F9] px-3 py-1 text-[#1C1C28] rounded border hover:bg-[#fff] transition-all duration-300 flex items-center justify-center gap-2">
+          <img src="/assets/edit.svg" alt="">
           <span>تعديل</span>
         </button>
       </div>
     </header>
     <div class="grid grid-cols-4 gap-12">
-      <div class="bg-extraWhite rounded-lg lg:col-span-3 sm:col-span-4">
+      <div class="bg-extraWhite rounded-lg xl:col-span-3 sm:col-span-4">
         <app-chart></app-chart>
       </div>
-      <div class="lg:col-span-1 sm:col-span-4">
+      <div class="xl:col-span-1 sm:col-span-4">
         <app-ticket></app-ticket>
       </div>
     </div>
+    <section class="my-6">
+      <div class="flex justify-between items-center">
+        <div class="flex gap-4">
+          <p>مبيعات تذاكر</p>
+
+          <form>
+            <label for="default-search"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+              </div>
+              <input type="search" id="default-search"
+                class="block w-[300px] py-3 px-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary"
+                placeholder="بحث عن ..." required>
+            </div>
+          </form>
+
+          <button class="px-3 py-2 bg-extraWhite border-2 border-gray rounded-lg">
+            <img src="assets/filter.png" alt="" srcset="">
+          </button>
+          <button class="px-3 py-2 bg-extraWhite border-2 border-gray rounded-lg">
+            <img src="assets/sort.png" alt="" srcset="">
+          </button>
+        </div>
+        <div class="flex gap-5">
+
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" checked>
+            <div
+              class="w-11 h-5 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-primary peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.1 after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+            </div>
+            <span class="ms-3 text-sm font-medium text-gray-900">مفعلة</span>
+          </label>
+
+          <button class="px-4 py-2 bg-primary text-extraWhite rounded">حجز تذكرة جديدة</button>
+        </div>
+      </div>
+    </section>
+    <article>
+      <app-table></app-table>
+    </article>
   </div>
 </div>

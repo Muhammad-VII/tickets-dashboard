@@ -1,17 +1,15 @@
-<section class="py-5 bg-ticket bg-cover bg-no-repeat bg-center p-2 rounded-lg relative bg-primary gradient-border">
+<section class="py-5  bg-ticket bg-cover bg-no-repeat bg-center p-2 rounded-lg relative bg-primary gradient-border">
   <div class="card_upper_section">
     <div class="card_title">عرض التذكرة الخاصة بالفيلم</div>
     <div class="copy_btn text-center">
-      <button class="py-3 px-4 my-2 md:py-2 md:px-2">
-        <span class="ticket_text md:text-sm">
+      <button class="py-3 px-5 lg:px-4 lg:py-3 my-2 flex justify-center items-center gap-2 mx-auto">
+        <span>
           www.tazkty.com/473847
         </span>
-        <i (click)="copyToClipboard()" class="fa-regular fa-copy"></i>
+        <img class="cursor-pointer" (click)="copyToClipboard()" src="assets/tickets/copy.svg" alt="">
       </button>
       <p>فعال حتى 15 يوليو 2023</p>
     </div>
-
-
 
     <div class="delete_btn" data-tooltip-placement="bottom" data-tooltip-target="tooltip-bottom">
       <i class="fa-solid fa-trash-can"></i>
