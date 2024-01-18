@@ -1,0 +1,116 @@
+section {
+  .card_upper_section {
+    border-bottom: 2.4px dashed #ffffff66;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      right: -22px;
+      width: 30px;
+      height: 30px;
+      border-radius: 150px 150px 0 0;
+      transform: rotate(-90deg);
+      background-color: #f3f5f7;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: -22px;
+      width: 30px;
+      height: 30px;
+      border-radius: 150px 150px 0 0;
+      transform: rotate(90deg);
+      background-color: #f3f5f7;
+    }
+    .card_title {
+      font-family: "Neo Sans Arabic Regular";
+      font-size: 17px;
+      font-weight: 500;
+      text-align: center;
+      color: #fff;
+    }
+    .copy_btn {
+      p {
+        font-family: "Neo Sans Arabic Regular";
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 0.4rem;
+      }
+      button {
+        border: dashed 1px #dddddd;
+        background-color: #ffffff;
+        border-radius: 8.32px;
+        font-size: Inter;
+        cursor: auto;
+        i {
+          margin-right: 1rem;
+          @apply text-primary;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          &:hover {
+            @apply text-primary/50;
+          }
+        }
+      }
+    }
+    .delete_btn {
+      position: absolute;
+      left: 20px;
+      top: 2px;
+      i {
+        transition: color 0.2s ease-in-out;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        &:hover {
+          color: #ffffff93;
+        }
+      }
+    }
+  }
+
+  .card_lower_section {
+    position: relative;
+    .discount {
+      margin-top: 2rem;
+      margin-right: 0.7rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 1rem;
+      color: #fff;
+      font-size: 18px;
+      .share {
+        button {
+          border: none;
+          font-size: 12px;
+          font-family: "Neo Sans Arabic Regular";
+          color: #fff;
+          background-color: transparent;
+          padding: 0.3rem 0.7rem;
+          border-radius: 4px;
+          border: 1px solid #fff;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          i {
+            transform: rotate(-70deg);
+          }
+
+          &:hover {
+            background-color: #d6d6d675;
+          }
+        }
+      }
+    }
+    .qrCode {
+      position: absolute;
+      left: 10px;
+      top: 0px;
+    }
+  }
+  
+}

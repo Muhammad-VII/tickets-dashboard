@@ -1,0 +1,42 @@
+<section class="py-5 bg-ticket bg-cover bg-no-repeat bg-center p-2 rounded-lg relative bg-primary gradient-border">
+  <div class="card_upper_section">
+    <div class="card_title">عرض التذكرة الخاصة بالفيلم</div>
+    <div class="copy_btn text-center">
+      <button class="py-3 px-4 my-2 md:py-2 md:px-2">
+        <span class="ticket_text md:text-sm">
+          www.tazkty.com/473847
+        </span>
+        <i (click)="copyToClipboard()" class="fa-regular fa-copy"></i>
+      </button>
+      <p>فعال حتى 15 يوليو 2023</p>
+    </div>
+
+
+
+    <div class="delete_btn" data-tooltip-placement="bottom" data-tooltip-target="tooltip-bottom">
+      <i class="fa-solid fa-trash-can"></i>
+    </div>
+    <div id="tooltip-bottom" role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+      حذف
+      <div class="tooltip-arrow" data-tooltip-target="tooltip-default" data-popper-arrow></div>
+    </div>
+  </div>
+
+  <div class="card_lower_section">
+    <div class="discount">
+      <div>
+        <p>خصم</p>
+        <p>25%</p>
+      </div>
+      <div class="share">
+        <button> <i class="fa-regular fa-paper-plane"></i> مشاركة </button>
+      </div>
+    </div>
+
+    <div class="qrCode">
+      <qrcode [qrdata]="'https://atechnologies.info/'" [colorDark]="'#8A74F9'" [elementType]="'canvas'"
+        [errorCorrectionLevel]="'M'" [title]="'ATechnologies QrCode'" [width]="82"></qrcode>
+    </div>
+  </div>
+</section>

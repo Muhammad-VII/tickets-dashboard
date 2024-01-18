@@ -1,0 +1,26 @@
+<div class="dashboard-layout">
+  <div class="container">
+    <header class="mb-3 flex items-center justify-between">
+      <div class="flex items-center justify-center">
+        <button class="bg-[#E7EAED] px-3 py-1 rounded">
+          <i class="fa fa-arrow-right"></i>
+        </button>
+        <p class="mr-2">{{'تذكرة رقم #2342'}}</p>
+      </div>
+      <div class="flex items-center justify-center">
+        <button class="bg-[#F9F9F9] px-3 py-1 text-[#1C1C28] rounded border hover:bg-[#fff] transition-all duration-300">
+          <i class="fa-regular fa-pen-to-square ml-1 text-primary"></i>
+          <span>تعديل</span>
+        </button>
+      </div>
+    </header>
+    <div class="grid grid-cols-4 gap-12">
+      <div class="bg-extraWhite rounded-lg lg:col-span-3 sm:col-span-4">
+        <app-chart></app-chart>
+      </div>
+      <div class="lg:col-span-1 sm:col-span-4">
+        <app-ticket></app-ticket>
+      </div>
+    </div>
+  </div>
+</div>

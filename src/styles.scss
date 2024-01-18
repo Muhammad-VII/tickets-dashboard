@@ -1,1 +1,116 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Global rules
+@font-face {
+  font-family: "Neo Sans Arabic Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Regular"),
+    url("./assets/Neo Sans Arabic Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Regular"),
+    url("./assets/NeoSansArabic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Light"),
+    url("./assets/NeoSansArabicLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Medium"),
+    url("./assets/NeoSansArabicMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Bold"),
+    url("./assets/NeoSansArabicBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Black"),
+    url("./assets/NeoSansArabicBlack.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Arabic Ultra";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Arabic Ultra"),
+    url("./assets/NeoSansArabicUltra.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neo Sans Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neo Sans Medium"),
+    url("./assets/Neo_Sans_Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Inter-Regular"),
+    url("./assets/Inter-Regular.ttf") format("truetype");
+}
+
+@layer base {
+  body {
+    @apply bg-white overflow-hidden leading-relaxed;
+  }
+  .dashboard-layout {
+    @apply w-full h-screen overflow-hidden my-20;
+  }
+  .container {
+    max-width: 1800px !important;
+  }
+  h1 {
+    @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;
+    font-family: "Neo Sans Arabic Regular";
+  }
+  h2 {
+    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
+    font-family: "Neo Sans Arabic Regular";
+  }
+  p {
+    @apply leading-[1.8];
+    @apply text-[18px] md:text-[24px];
+    font-family: "Neo Sans Arabic Regular";
+  }
+  .btn,
+  .input {
+    @apply h-[52px];
+    font-family: "Neo Sans Arabic Regular";
+  }
+  .input {
+    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+  }
+  .input,
+  .textarea {
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+  }
+  .textarea {
+    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+  }
+}
