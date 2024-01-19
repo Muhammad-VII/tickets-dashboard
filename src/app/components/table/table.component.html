@@ -1,1 +1,143 @@
-<p>table works!</p>
+<section class="my-6">
+  <div class="flex justify-between items-center">
+    <div class="flex gap-4">
+      <p>مبيعات تذاكر</p>
+
+      <form>
+        <label for="default-search"
+          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+          </div>
+          <input type="search" id="default-search"
+            class="block w-[300px] py-3 px-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary"
+            placeholder="بحث عن ..." required>
+        </div>
+      </form>
+
+      <button class="px-3 py-2 bg-extraWhite border-2 border-gray rounded-lg">
+        <img src="assets/filter.png" alt="" srcset="">
+      </button>
+      <button class="px-3 py-2 bg-extraWhite border-2 border-gray rounded-lg">
+        <img src="assets/sort.png" alt="" srcset="">
+      </button>
+    </div>
+    <div class="flex gap-5">
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" checked>
+        <div
+          class="w-11 h-5 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-primary peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.1 after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+        </div>
+        <span class="ms-3 text-sm font-medium text-gray-900">مفعلة</span>
+      </label>
+
+      <button class="px-4 py-2 bg-primary text-extraWhite rounded">حجز تذكرة جديدة</button>
+    </div>
+  </div>
+</section>
+
+<p-table #dt1 [value]="tickets" dataKey="id" [rows]="5" [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[20, 50, 100]" [paginator]="true" [rows]="5" [showCurrentPageReport]="false"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[20, 50, 100]">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>
+        <div>
+          #
+        </div>
+      </th>
+      <th>
+        <div class="flex align-items-center">
+          المستخدم
+        </div>
+      </th>
+      <th>
+        <div class="flex align-items-center">
+          رقم التذكرة
+        </div>
+      </th>
+      <th pSortableColumn="ticketPrice">
+        <div class="flex align-items-center">
+          قيمة التذكرة <p-sortIcon field="ticketPrice" class="mr-2 mt-1"></p-sortIcon>
+        </div>
+      </th>
+      <th class="flex justify-center">
+        <div class="flex align-items-center">
+          السينيمات
+        </div>
+      </th>
+      <th>
+        <div class="flex align-items-center">
+          عدد الأشخاص
+        </div>
+      </th>
+      <th>
+        <div class="flex align-items-center">
+          عدد مرات الشراء
+        </div>
+      </th>
+      <th class="flex justify-center">
+        <div class="flex align-items-center">
+          التذكرة
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-ticket let-rowIndex="rowIndex">
+    <tr>
+      <td class="text-center">
+        {{rowIndex + 1}}
+      </td>
+      <td class="text-right">
+        {{ticket.name}}
+      </td>
+      <td class="text-right">
+        {{ticket.ticketNumber}}
+      </td>
+      <td class="text-right">
+        {{ticket.ticketPrice}}
+      </td>
+      <td class="text-right">
+        {{ticket.cinemas}}
+      </td>
+      <td class="text-right">
+        {{ticket.persons}}
+      </td>
+      <td class="text-right">
+        {{ticket.purshasedCount}}
+      </td>
+      <td class="text-left">
+        <button class="border-none bg-transparent flex items-center gap-2">
+          <div class="ml-2">
+            <img src="assets/table/ticket_icon.png" alt="">
+          </div>
+          <p class="text-sm text-right">
+            <span class="font-bold">{{ticket.ticketPdf.name}}</span>
+            <br />
+            {{ticket.ticketPdf.size}} . {{ticket.ticketPdf.type}}
+          </p>
+          <a #fileInput type="text" id="file" class="hidden" download="ticket.pdf" href="{{ticket.ticketPdf.url}}"></a>
+          <label (click)="fileInput.click()" for="file" class="cursor-pointer mr-2 mb-4">
+            <img src="assets/table/download.png" alt="">
+          </label>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="paginatorleft">
+    <!-- <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button> -->
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="7">No customers found.</td>
+    </tr>
+  </ng-template>
+</p-table>

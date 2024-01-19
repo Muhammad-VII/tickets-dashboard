@@ -23,6 +23,7 @@
     "echarts": "^5.4.3",
     "flowbite": "^2.2.1",
     "ngx-echarts": "^17.1.0",
+    "primeicons": "^6.0.1",
     "primeng": "^17.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
